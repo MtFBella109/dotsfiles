@@ -10,6 +10,8 @@
     cmatrix
     discord
     easyeffects
+    gthumb
+    gnome.file-roller
     helvum
     htop
     libnotify
