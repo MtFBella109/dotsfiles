@@ -11,6 +11,10 @@ sed -i "s/USER/$USER/g" ./flake.nix
 sed -i "s/USER/$USER/g" ./home/user/home.nix
 sed -i "s/USER/$USER/g" ./hosts/user/configuration.nix
 sed -i "s/TIMEZONE/$timezone/g" ./hosts/user/configuration.nix
+if [ -z "$layout" ]
+then
+      layout = us
+fi
 sed -i "s/LAYOUT/$layout/g" ./hosts/user/configuration.nix
 sed -i "s/LOCALE/$locale/g" ./hosts/user/configuration.nix
 
