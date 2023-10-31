@@ -147,9 +147,9 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.USERNAME = {
+  users.users.USER = {
     isNormalUser = true;
-    description = "USERNAME";
+    description = "USER";
     shell = pkgs.fish;
     extraGroups = [ "networkmanager" "wheel" "libvirtd"];
     # packages = with pkgs; [
