@@ -70,8 +70,7 @@ in {
     };
     "clock" = {
       tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-      format-alt = " {:%a %b %d}";
-      format = " {:%H:%M}";
+      format = " FORMAT";
       timezone = "TIMEZONE";
       today-format = "<span color = '#ff6699'><b><u>{}</u></b></span>";
       format-calendar = "<span color='#ecc6d9'><b>{}</b></span>";
