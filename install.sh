@@ -5,15 +5,22 @@ nixos_file="/etc/nixos/configuration.nix"
 timezone=$(grep 'time.timeZone =' "$nixos_file" | awk -F'"' '{print $2}')
 layout=$(grep 'layout =' "$nixos_file" | awk -F'"' '{print $2}')
 locale=$(grep 'i18n.defaultLocale =' "$nixos_file" | awk -F'"' '{print $2}')
+format="{:%H:%M}"
 
 ## Rename everything to the correct username and change some things in the configuration.nix
 sed -i "s/USER/$USER/g" ./flake.nix
 sed -i "s/USER/$USER/g" ./home/user/home.nix
 sed -i "s/USER/$USER/g" ./hosts/user/configuration.nix
 sed -i "s/TIMEZONE/$timezone/g" ./hosts/user/configuration.nix
-if [ -z "$layout" ]
-then
+sed -i "s/TIMEZONE/$timezone/g" ./home/user/services/wayland/waybar/config.nix
+if [ -z "$layout" ]; then
       layout=us
+fi
+if [[ $timezone = America* ]]; then
+      format="{:%a %b %d}"
+      sed -i "s/FORMAT/$format/g" ./home/user/services/wayland/waybar/config.nix
+else
+      sed -i "s/FORMAT/$format/g" ./home/user/services/wayland/waybar/config.nix
 fi
 sed -i "s/LAYOUT/$layout/g" ./hosts/user/configuration.nix
 sed -i "s/LOCALE/$locale/g" ./hosts/user/configuration.nix
