@@ -27,7 +27,7 @@ if test -d $USER/.backgrounds; then
 fi
 if test -d $USER/.themes; then
   mv $HOME/.themes $HOME
-
+fi
 ## Make a symlink to the dotfiles, that aren't managed via home-manager
 ln -s ./dots/.config/hypr $HOME/.config/hypr
 ln -s ./dots/.backgrounds $HOME/.backgrounds
