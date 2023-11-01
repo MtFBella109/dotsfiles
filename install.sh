@@ -33,10 +33,6 @@ ln -s ./dots/.config/hypr $HOME/.config/hypr
 ln -s ./dots/.backgrounds $HOME/.backgrounds
 ln -s ./dots/.themes $HOME/.themes
 
-## Rename the directory under home and hosts
-mv home/user home/$USER
-mv hosts/user hosts/$USER
-
 ## Copy the hardware-configuration.nix
 echo "Should we copy the hardware-configuration.nix from /etc/nixos to this directory y/N? (Needed to apply all the configs, this command will need sudo privileges)"
 read input
@@ -47,6 +43,10 @@ else
   echo "Okay, we don't copy it, but remember to add it under hosts/$USER or otherwise you can't apply this configs"
 fi
 
+## Rename the directory under home and hosts
+mv home/user home/$USER
+mv hosts/user hosts/$USER
+
 ## Actually install everything
 echo "Do you want to install this configuration via the Flake y/n?"
 read userinput
@@ -54,5 +54,5 @@ if test "$userinput" = "y"; then
   echo "We need to execute the next command with sudo, so pleasy type in your Password"
   sudo nixos-rebuild switch --impure --flake .#$USER
 else
-  echo "Okay, we don't apply the configs, if you want to apply them go in this directory and Type in this Command: \"sudo nixos-rebuild switch --impure --flake .#$USER\""
+  echo "Okay, we don't apply the configs, if you want to apply them go in this directory and Type in this Command: 'sudo nixos-rebuild switch --impure --flake .#$USER'"
 fi
