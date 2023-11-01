@@ -193,8 +193,6 @@
     dunst
     git
     grim
-    haguichi
-    localsend
     libsForQt5.kdeconnect-kde
     libsForQt5.qt5ct
     libsForQt5.qt5.qtwayland
@@ -203,13 +201,10 @@
     qt6.qtwayland
     rofi-power-menu
     rofi-wayland
-    rustdesk
     slurp
-    solaar
     teamviewer
     unzip
     virt-manager
-    vscode-with-extensions
     waybar
     wget
     wmctrl
