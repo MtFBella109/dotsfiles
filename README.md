@@ -17,10 +17,10 @@ If you download it for the first time, you will need a bit to fully understand h
 **If you have any Error's please open a Pull Request and I will check how to fix that**
 
 ## Specs
-Distro: NixOS
-WM: Hyprland
-Theme: Adwaita-Dark
-Window-System: Wayland
+- Distro: NixOS
+- WM: Hyprland
+- Theme: Adwaita-Dark
+- Window-System: Wayland
 
 ## Credits 
 Thanks to [redyf](https://github.com/redyf) and his [nixdots](https://github.com/redyf/nixdots)
