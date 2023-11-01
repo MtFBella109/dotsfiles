@@ -182,12 +182,12 @@ in {
         "SUPER,9,workspace,9"
         "SUPER,0,workspace,10"
 
-        CTRL,1,workspace,1
-        CTRL,2,workspace,2
-        CTRL,3,workspace,3
-        CTRL,4,workspace,4
-        CTRL,5,workspace,5
-        CTRL,6,workspace,6
+        "CTRL,1,workspace,1"
+        "CTRL,2,workspace,2"
+        "CTRL,3,workspace,3"
+        "CTRL,4,workspace,4"
+        "CTRL,5,workspace,5"
+        "CTRL,6,workspace,6"
 
         ################################## Move ###########################################
         "SUPER SHIFT, H, movewindow, l"
