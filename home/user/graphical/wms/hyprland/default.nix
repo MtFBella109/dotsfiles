@@ -37,7 +37,7 @@ in {
       };
 
       input = {
-        kb_layout = "de";
+        kb_layout = "LAYOUT";
         kb_variant = "";
         kb_model = "";
         kb_options = "";
@@ -67,7 +67,6 @@ in {
 
       decoration = {
         rounding = 5;
-        multisample_edges = true;
         shadow_ignore_window = true;
         drop_shadow = true;
         shadow_range = 20;
