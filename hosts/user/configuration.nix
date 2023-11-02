@@ -64,21 +64,6 @@
 
   # Set your time zone.
   time.timeZone = "TIMEZONE";
-  #fonts.packages = with pkgs; [
-  #  font-awesome
-  #  roboto
-  #  helvetica-neue-lt-std
-  #  liberation-sans-narrow
-  #  liberation_ttf
-  #  nerdfonts
-  #  vistafonts
-  #  corefonts
-  #  (import (fetchFromGitHub {
-  #    owner = "dustinlyons";
-  #    repo = "nixpkgs";
-  #    rev = "2c8a1fa44d9fb88448d1075495a520b138952df1"; # the git com>
- 
- 
 
  # Select internationalisation properties.
   i18n.defaultLocale = "LOCALE";
@@ -104,10 +89,14 @@
   services.xserver = {
     enable = true;
     videoDrivers = ["nvidia"];
-    displayManager.sddm = {
-      enable = true;
-      theme = "catppuccin-mocha";
+    # displayManager.sddm = {
+    #  enable = true;
+    #  theme = "catppuccin-mocha";
       # wayland = true;
+    #};
+    displayManager.gdm = {
+      enable = true;
+      wayland = true;
     };
     # Configre keymap in X11
     layout = "LAYOUT";
@@ -139,34 +128,14 @@
     
   };
 
-  virtualisation.libvirtd.enable = true;
-  programs.dconf.enable = true;
-  #programs.virt-manager.enable = true;
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.USER = {
     isNormalUser = true;
     description = "USER";
     shell = pkgs.fish;
-    extraGroups = [ "networkmanager" "wheel" "libvirtd"];
-    # packages = with pkgs; [
-    #  brave
-    #  discord
-    #  helvum
-    #  htop
-    #  looking-glass-client
-    #  lutris
-    #  nwg-look
-    #  onlyoffice-bin
-    #  schildichat-desktop-wayland
-    #  solaar
-    #  steam
-    #  tmux
-    #  webcord
-    #];
+    extraGroups = [ "networkmanager" "wheel" ];
   };
 
   # Allow unfree packages
@@ -186,7 +155,6 @@
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     adwaita-qt
     alacritty
-    audacity
     cliphist
     nur.repos.MtFBella109.catppuccin-mocha
     deluge-gtk
@@ -196,15 +164,12 @@
     libsForQt5.kdeconnect-kde
     libsForQt5.qt5ct
     libsForQt5.qt5.qtwayland
-    lmms
     mc
     qt6.qtwayland
     rofi-power-menu
     rofi-wayland
     slurp
-    teamviewer
     unzip
-    virt-manager
     waybar
     wget
     wmctrl
@@ -215,12 +180,6 @@
   hardware.opengl.driSupport32Bit = true;
   hardware.nvidia.modesetting.enable = true;
 
-  # hyprland
-  #programs.hyprland = {
-  #  enable = true;
-  #  xwayland.enable = true;
-  #  enableNvidiaPatches = true;
-  #};
 
   programs.fish.enable = true;
 
