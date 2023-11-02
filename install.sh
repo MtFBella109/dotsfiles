@@ -24,6 +24,7 @@ else
 fi
 sed -i "s/LAYOUT/$layout/g" ./hosts/user/configuration.nix
 sed -i "s/LOCALE/$locale/g" ./hosts/user/configuration.nix
+sed -i "s/LAYOUT/$layout/g" ./home/user/graphical/wms/hyprland/default.nix
 
 ## Make backups if the directory exists
 if test -d $HOME/.config/hypr; then
