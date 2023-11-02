@@ -27,6 +27,5 @@
     tmux
     tree
     vlc
-    vscode-with-extensions
   ];
 }
