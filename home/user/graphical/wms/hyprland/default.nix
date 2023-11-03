@@ -87,7 +87,6 @@ in {
 
       animations = {
         enabled = false;
-        # Selmer443 config
         bezier = [
           "pace,0.46, 1, 0.29, 0.99"
           "overshot,0.13,0.99,0.29,1.1"

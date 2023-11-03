@@ -39,11 +39,11 @@ fi
 rm -rf ./.git
 
 ## Make a symlink to the dotfiles, that aren't managed via home-manager
-ln -s ./dots/.config/hypr/autostart $HOME/.config/hypr/autostart
-ln -s ./dots/.config/hypr/scripts $HOME/.config/hypr/scripts
-ln -s ./dots/.config/hypr/store $HOME/.config/hypr/store
-ln -s ./dots/.backgrounds $HOME/.backgrounds
-ln -s ./dots/.themes $HOME/.themes
+ln -s ./dots/config/hypr/autostart $HOME/.config/hypr/autostart
+ln -s ./dots/config/hypr/scripts $HOME/.config/hypr/scripts
+ln -s ./dots/config/hypr/store $HOME/.config/hypr/store
+ln -s ./dots/backgrounds $HOME/.backgrounds
+ln -s ./dots/themes $HOME/.themes
 
 ## Copy the hardware-configuration.nix
 echo "Should we copy the hardware-configuration.nix from /etc/nixos to this directory y/N? (Needed to apply all the configs, this command will need sudo privileges)"
