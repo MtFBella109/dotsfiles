@@ -21,6 +21,7 @@ If you download it for the first time, you will need a bit to fully understand h
 - WM: Hyprland
 - Theme: Adwaita-Dark
 - Window-System: Wayland
+- Graphic-FileManager: pcmanfm
 
 ## Credits 
 Thanks to [redyf](https://github.com/redyf) and his [nixdots](https://github.com/redyf/nixdots)

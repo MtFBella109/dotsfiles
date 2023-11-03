@@ -11,8 +11,8 @@ format="{:%H:%M}"
 sed -i "s/USER/$USER/g" ./flake.nix
 sed -i "s/USER/$USER/g" ./home/user/home.nix
 sed -i "s/USER/$USER/g" ./hosts/user/configuration.nix
-sed -i "s/TIMEZONE/$timezone/g" ./hosts/user/configuration.nix
-sed -i "s/TIMEZONE/$timezone/g" ./home/user/services/wayland/waybar/config.nix
+sed -i "s/TIMEZONE/$(echo $timezone | sed 's/\//\\\//g')/g" ./hosts/user/configuration.nix
+sed -i "s/TIMEZONE/$(echo $timezone | sed 's/\//\\\//g')/g" ./home/user/services/wayland/waybar/config.nix
 if [ -z "$layout" ]; then
       layout=us
 fi
