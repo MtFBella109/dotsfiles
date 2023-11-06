@@ -45,11 +45,13 @@ chmod -R 733 ./*
 
 ## Make a hardlink to the dotfiles, that aren't managed via home-manager
 mkdir ~/.config/hypr
-ln $pwd/dots/config/hypr/autostart ~/.config/hypr/autostart
-ln $pwd/dots/config/hypr/scripts ~/.config/hypr/scripts
-ln $pwd/dots/config/hypr/store ~/.config/hypr/store
-ln $pwd/dots/backgrounds ~/.backgrounds
-ln $pwd/dots/themes ~/.themes
+ln -s $pwd/dots/config/hypr/autostart ~/.config/hypr/autostart
+ln -s $pwd/dots/config/hypr/scripts ~/.config/hypr/scripts
+ln -s $pwd/dots/config/hypr/store ~/.config/hypr/store
+ln -s $pwd/dots/backgrounds ~/.backgrounds
+ln -s $pwd/dots/config/waybar/scripts ~/.config/waybar/scripts
+ln -s $pwd/dots/config/waybar/store ~/.config/waybar/store
+ln -s $pwd/dots/themes ~/.themes
 
 ## Copy the hardware-configuration.nix
 echo "Should we copy the hardware-configuration.nix from /etc/nixos to this directory y/N? (Needed to apply all the configs, this command will need sudo privileges)"
