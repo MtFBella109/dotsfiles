@@ -6,6 +6,7 @@ timezone=$(grep 'time.timeZone =' "$nixos_file" | awk -F'"' '{print $2}')
 layout=$(grep 'layout =' "$nixos_file" | awk -F'"' '{print $2}')
 locale=$(grep 'i18n.defaultLocale =' "$nixos_file" | awk -F'"' '{print $2}')
 format="{:%H:%M}"
+pwd=$PWD
 
 ## Rename everything to the correct username and change some things in the configuration.nix
 sed -i "s/USER/$USER/g" ./flake.nix
@@ -38,13 +39,17 @@ if test -d $USER/.themes; then
 fi
 rm -rf ./.git
 
-## Make a symlink to the dotfiles, that aren't managed via home-manager
+## Make everything executable
+cd dots
+chmod -R 733 ./*
+
+## Make a hardlink to the dotfiles, that aren't managed via home-manager
 mkdir ~/.config/hypr
-ln -s ./dots/config/hypr/autostart ~/.config/hypr/autostart
-ln -s ./dots/config/hypr/scripts ~/.config/hypr/scripts
-ln -s ./dots/config/hypr/store ~/.config/hypr/store
-ln -s ./dots/backgrounds ~/.backgrounds
-ln -s ./dots/themes ~/.themes
+ln $pwd/dots/config/hypr/autostart ~/.config/hypr/autostart
+ln $pwd/dots/config/hypr/scripts ~/.config/hypr/scripts
+ln $pwd/dots/config/hypr/store ~/.config/hypr/store
+ln $pwd/dots/backgrounds ~/.backgrounds
+ln $pwd/dots/themes ~/.themes
 
 ## Copy the hardware-configuration.nix
 echo "Should we copy the hardware-configuration.nix from /etc/nixos to this directory y/N? (Needed to apply all the configs, this command will need sudo privileges)"
@@ -65,7 +70,7 @@ echo "Do you want to install this configuration via the Flake y/n?"
 read userinput
 if test "$userinput" = "y"; then
   echo "We need to execute the next command with sudo, so pleasy type in your Password"
-  sudo nixos-rebuild switch --impure --flake .#$USER
+  sudo nixos-rebuild boot --impure --flake .#$USER
 else
   echo "Okay, we don't apply the configs, if you want to apply them go in this directory and Type in this Command: 'sudo nixos-rebuild switch --impure --flake .#$USER'"
 fi
