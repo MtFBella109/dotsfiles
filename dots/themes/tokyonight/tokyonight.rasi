@@ -1,111 +1,139 @@
+/*
+ * Tokyonight colorscheme for rofi
+ * User: w8ste
+ */
+
+
+// define colors etc.
 * {
-  font:   "Iosevka Nerd Font Medium 11";
+    bg: #24283b;
+    hv: #9274ca; 
+    primary: #C5C8C6; 
+    ug: #0B2447;
+    font: "Monospace 11";
+    background-color: @bg;
+    //dark: @bg;
+    border: 0px;
+    kl: #7aa2f7;
+    black: #000000;
 
-  bg0     : #1a1b26;
-  bg1     : #1f2335;
-  bg2     : #24283b;
-  bg3     : #414868;
-  fg0     : #c0caf5;
-  fg1     : #a9b1d6;
-  fg2     : #737aa2;
-  red     : #f7768e;
-  green   : #9ece6a;
-  yellow  : #e0af68;
-  blue    : #7aa2f7;
-  magenta : #9a7ecc;
-  cyan    : #4abaaf;
-
-  accent: @red;
-  urgent: @yellow;
-
-  background-color : transparent;
-  text-color       : @fg0;
-
-  margin  : 0;
-  padding : 0;
-  spacing : 0;
+    transparent: rgba(46,52,64,0);
 }
 
-element-icon, element-text, scrollbar {
-  cursor: pointer;
-}
-
+// defines different aspects of the window
 window {
-  location : northwest;
-  width    : 280px;
-  x-offset : 4px;
-  y-offset : 26px;
+    width: 700;
+    /*since line wont work with height, i comment it out 
+    if you rather control the size via height
+    just comment it out */
+    //height: 500;
 
-  background-color: @bg1;
-  border: 1px;
-  border-color: @bg3;
-  border-radius: 6px;
+    orientation: horizontal;
+    location: center;
+    anchor: center;
+    transparency: "screenshot";
+    border-color: @transparent;   
+    border: 0px;
+    border-radius: 6px;
+    spacing: 0;
+    children: [ mainbox ];
+}
+
+mainbox {
+    spacing: 0;
+    children: [ inputbar, message, listview ];
 }
 
 inputbar {
-  spacing  : 8px;
-  padding  : 4px 8px;
-  children : [ icon-search, entry ];
-
-  background-color: @bg0;
+    color: @kl;
+    padding: 11px;
+    border: 3px 3px 2px 3px;
+    border-color: @primary;
+    border-radius: 6px 6px 0px 0px;
 }
 
-icon-search, entry, element-icon, element-text {
-  vertical-align: 0.5;
+message {
+    padding: 0;
+    border-color: @primary;
+    border: 0px 1px 1px 1px;
 }
 
-icon-search {
-  expand   : false;
-  filename : "search-symbolic";
-  size     : 14px;
+entry, prompt, case-indicator {
+    text-font: inherit;
+    text-color: inherit;
 }
 
-textbox {
-  padding          : 4px 8px;
-  background-color : @bg2;
+entry {
+    cursor: pointer;
+}
+
+prompt {
+    margin: 0px 5px 0px 0px;
 }
 
 listview {
-  padding      : 4px 0px;
-  lines        : 12;
-  columns      : 1;
-  scrollbar    : true;
-  fixed-height : false;
-  dynamic      : true;
+    layout: vertical;
+    //spacing: 5px;
+    padding: 8px;
+    lines: 12;
+    columns: 1;
+    border: 0px 3px 3px 3px; 
+    border-radius: 0px 0px 6px 6px;
+    border-color: @primary;
+    dynamic: false;
 }
 
 element {
-  padding : 4px 8px;
-  spacing : 8px;
-}
-
-element normal urgent {
-  text-color: @urgent;
-}
-
-element normal active {
-  text-color: @accent;
-}
-
-element selected {
-  text-color       : @bg1;
-  background-color : @accent;
-}
-
-element selected urgent {
-  background-color: @urgent;
-}
-
-element-icon {
-  size: 0.8em;
+    padding: 2px;
+    vertical-align: 1;
+    color: @kl;
+    font: inherit;
 }
 
 element-text {
-  text-color: inherit;
+    background-color: inherit;
+    text-color: inherit;
+}
+
+element selected.normal {
+    color: @black;
+    background-color: @hv;
+}
+
+element normal active {
+    background-color: @hv;
+    color: @black;
+}
+
+element-text, element-icon {
+    background-color: inherit;
+    text-color: inherit;
+}
+
+element normal urgent {
+    background-color: @primary;
+}
+
+element selected active {
+    background: @hv;
+    foreground: @bg;
+}
+
+button {
+    padding: 6px;
+    color: @primary;
+    horizonatal-align: 0.5;
+
+    border: 2px 0px 2px 2px;
+    border-radius: 4px 0px 0px 4px;
+    border-color: @primary;
+}
+
+button selected normal {
+    border: 2px 0px 2px 2px;
+    border-color: @primary;
 }
 
 scrollbar {
-  handle-width : 4px;
-  handle-color : @fg2;
-  padding      : 0 4px;
-}
+    enabled: true;
+} 
