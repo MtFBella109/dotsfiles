@@ -34,7 +34,6 @@
     ./cli
     ./dev
     ./system
-    ./themes
     ./services
     ./graphical
   ];
