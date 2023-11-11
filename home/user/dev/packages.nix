@@ -14,6 +14,7 @@
     gnome.file-roller
     helvum
     htop
+    jq
     libnotify
     lutris
     onefetch
