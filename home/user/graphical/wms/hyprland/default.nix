@@ -148,6 +148,8 @@ in {
         "XDG_SESSION_TYPE,wayland"
         "GBM_BACKEND,nvidia-drm"
         "__GLX_VENDOR_LIBRARY_NAME,nvidia"
+        "GTK_THEME,Adwaita:dark"
+        "QT_STYLE_OVERRIDE,adwaita-dark"
 ];
 
       bind = [
