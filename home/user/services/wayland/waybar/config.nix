@@ -9,10 +9,8 @@ with lib; let
   sys = osConfig.modules.system;
 in {
   mainBar = {
-    layer = "top"; # Original
-    # position = "bottom"; # Original
+    layer = "top"; 
     height = 32;
-    # width = "1280";
     spacing = 8;
     margin-top = 6;
     margin-bottom = 2;
@@ -21,17 +19,13 @@ in {
     fixed-center = false;
     modules-left = [
       "hyprland/workspaces"
-      "custom/spotify"
     ];
     modules-center = [
       "hyprland/window"
     ];
     modules-right = [
-      # "custom/colorpicker"
       "custom/notification"
-      "custom/cava"
       "memory"
-      "disk"
       "pulseaudio"
       "clock"
       "tray"
@@ -86,12 +80,6 @@ in {
       on-click = "wezterm -e btop";
       tooltip = false;
     };
-    disk = {
-      format = "󰋊 {percentage_used}%";
-      format-alt = "󰋊 {used}/{total} GiB";
-      interval = 5;
-      path = "/";
-    };
     pulseaudio = {
       # scroll-step = 1; # %, can be a float
       format = "{icon} {volume}%";
@@ -111,32 +99,16 @@ in {
       };
       on-click = "pavucontrol";
     };
-    "custom/spotify" = {
-      exec = "python ~/.config/waybar/scripts/mediaplayer.py --player spotify";
-      format = " {}";
-      return-type = "json";
-      on-click = "playerctl --player=spotify play-pause";
-      on-scroll-down = "playerctl --player=spotify next";
-      on-scroll-up = "playerctl --player=spotify previous";
-      tooltip = false;
-    };
     "custom/power-menu" = {
       format = "⏻";
       on-click = "~/.config/waybar/scripts/power-menu/powermenu.sh";
     };
     "custom/notification" = {
       exec = "~/.config/waybar/scripts/notification.sh";
-      # exec = "~/flake/home/desktop/services/wayland/waybar/scripts/notification.sh";
       on-click = "dunstctl set-paused toggle";
-      on-click-right = "notify-send -t 1 'swww' '1' & ~/.config/hypr/scripts/wall";
       return-type = "json";
       max-length = 50;
       format = "{}";
     };
-    # "custom/colorpicker" = {
-    #   format = "";
-    #   on-click = "hyprpicker -a -f hex";
-    #   on-click-right = "hyprpicker -a -f rgb";
-    # };
   };
 }
