@@ -42,9 +42,11 @@ rm -rf ./.git
 ## Make everything executable
 cd dots
 chmod -R 733 ./*
+cd ../
 
 ## Make a hardlink to the dotfiles, that aren't managed via home-manager
-mkdir ~/.config/hypr
+mkdir -p ~/.config/hypr
+mkdir -p ~/.config/waybar
 ln -s $pwd/dots/config/hypr/autostart ~/.config/hypr/autostart
 ln -s $pwd/dots/config/hypr/scripts ~/.config/hypr/scripts
 ln -s $pwd/dots/config/hypr/store ~/.config/hypr/store
