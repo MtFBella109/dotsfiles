@@ -8,8 +8,8 @@
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home = {
-    username = "dodo";
-    homeDirectory = "/home/dodo";
+    username = "USER";
+    homeDirectory = "/home/USER";
     stateVersion = "22.11";
   };
 
