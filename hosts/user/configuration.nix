@@ -13,11 +13,11 @@
 
 
 
-  nixpkgs.config.packageOverrides = pkgs: {
-    nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
-      inherit pkgs;
-    };
-  };
+  #nixpkgs.config.packageOverrides = pkgs: {
+  #  nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
+  #    inherit pkgs;
+  #  };
+  #};
 
 
   # Bootloader.
@@ -89,15 +89,15 @@
   services.xserver = {
     enable = true;
     videoDrivers = ["nvidia"];
-    # displayManager.sddm = {
-    #  enable = true;
-    #  theme = "catppuccin-mocha";
-      # wayland = true;
-    #};
-    displayManager.gdm = {
+     displayManager.sddm = {
       enable = true;
-      wayland = true;
+      theme = "catppuccin-mocha";
+       wayland = true;
     };
+   # displayManager.gdm = {
+   #   enable = true;
+   #   wayland = true;
+   # };
     # Configre keymap in X11
     layout = "LAYOUT";
     xkbVariant = "";
@@ -121,7 +121,7 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
+    jack.enable = true;
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
@@ -156,7 +156,7 @@
     adwaita-qt
     alacritty
     cliphist
-    nur.repos.MtFBella109.catppuccin-mocha
+    catppuccin-unstable
     deluge-gtk
     dunst
     git
