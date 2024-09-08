@@ -65,7 +65,7 @@
         #  })
         #  {inherit pkgs;};
       #};
-    };
+   # };
   };
 
   fonts.fontconfig.enable = true;
