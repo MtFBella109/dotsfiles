@@ -92,7 +92,7 @@
      displayManager.sddm = {
       enable = true;
       theme = "catppuccin-mocha";
-       wayland = true;
+      wayland.enable = true;
     };
    # displayManager.gdm = {
    #   enable = true;
