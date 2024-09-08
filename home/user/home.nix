@@ -46,29 +46,25 @@
           _: {
             src = builtins.fetchTarball {
               url = "https://discord.com/api/download?platform=linux&format=tar.gz";
-              sha256 = "sha256:0yzgkzb0200w9qigigmb84q4icnpm2hj4jg400payz7igxk95kqk";
+              sha256 = "sha256:2fc08e74f3f848544efb59a2a639f8b632d1fb14a17096d3ffbdb284d1dd4968";
             };
           }
         );
       })
-      # (import (builtins.fetchTarball {
-      #   url = "https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz";
-      # }))
-      # (import ../../overlays/firefox-overlay.nix)
     ];
-    config = {
-      allowUnfreePredicate = pkg: true;
-      packageOverrides = pkgs: {
+   # config = {
+   #   allowUnfreePredicate = pkg: true;
+   #   packageOverrides = pkgs: {
         # integrates nur within Home-Manager
-        nur =
-          import
-          (builtins.fetchTarball {
-            url = "https://github.com/nix-community/NUR/archive/master.tar.gz";
-            sha256 = "sha256:1gr3l5fcjsd7j9g6k9jamby684k356a36h82cwck2vcxf8yw8xa0";
-          })
-          {inherit pkgs;};
-      };
-    };
+   #     nur =
+   #       import
+   #       (builtins.fetchTarball {
+   #         url = "https://github.com/nix-community/NUR/archive/master.tar.gz";
+   #         sha256 = "sha256:1gr3l5fcjsd7j9g6k9jamby684k356a36h82cwck2vcxf8yw8xa0";
+   #       })
+    #      {inherit pkgs;};
+   #   };
+   # };
   };
 
   fonts.fontconfig.enable = true;
