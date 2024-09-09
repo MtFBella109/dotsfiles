@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     utils.url = "github:gytis-ivaskevicius/flake-utils-plus";
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    #hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     waybar-hyprland.url = "github:hyprwm/hyprland";
     xdg-portal-hyprland.url = "github:hyprwm/xdg-desktop-portal-hyprland";
     nur.url = "github:nix-community/NUR";
@@ -25,7 +25,7 @@
   outputs = {
     self,
     nixpkgs,
-    hyprland,
+    #hyprland,
     home-manager,
     utils,
     ...
@@ -35,14 +35,14 @@
         nixpkgs.lib.nixosSystem
         {
           system = "x86_64-linux";
-          specialArgs = {
-            inherit
-              inputs
-              hyprland
-              ;
-          };
-				homeConfigurations."USER@nixos" = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          #specialArgs = {
+            #inherit
+              #inputs
+              #hyprland
+              #;
+        #  };
+				#homeConfigurations."USER@nixos" = home-manager.lib.homeManagerConfiguration {
+      #pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
           modules = [
             ./hosts/USER/configuration.nix
@@ -55,15 +55,15 @@
                 users.USER = ./home/USER/home.nix;
               };
             }
-                   {
-          wayland.windowManager.hyprland = {
-            enable = true;
+              #     {
+          #wayland.windowManager.hyprland = {
+            #enable = true;
             # set the flake package
-            package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-          };
-        }
+            #package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+         # };
+       # }
           ];
-					};
+					#};
         };
        };
       };
