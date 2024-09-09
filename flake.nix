@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     utils.url = "github:gytis-ivaskevicius/flake-utils-plus";
-    hyprland-nvidia.url = "github:hyprwm/hyprland";
+    hyprland.url = "github:hyprwm/hyprland";
     waybar-hyprland.url = "github:hyprwm/hyprland";
     xdg-portal-hyprland.url = "github:hyprwm/xdg-desktop-portal-hyprland";
     nur.url = "github:nix-community/NUR";
@@ -25,7 +25,7 @@
   outputs = {
     self,
     nixpkgs,
-    hyprland-nvidia,
+    hyprland,
     home-manager,
     utils,
     ...
@@ -38,7 +38,7 @@
           specialArgs = {
             inherit
               inputs
-              hyprland-nvidia
+              hyprland
               ;
           };
           modules = [
@@ -52,8 +52,13 @@
                 users.USER = ./home/USER/home.nix;
               };
             }
-            hyprland-nvidia.nixosModules.default
-            {programs.hyprland.enable = true;}
+                   {
+          wayland.windowManager.hyprland = {
+            enable = true;
+            # set the flake package
+            package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+          };
+        }
           ];
         };
        };
