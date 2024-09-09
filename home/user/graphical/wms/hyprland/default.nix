@@ -6,7 +6,6 @@
   lib,
   ...
 }: let
-  hyprland = inputs.hyprland-nvidia.packages.${pkgs.system}.hyprland-nvidia;
   fontsize = "12";
   primary_accent = "cba6f7";
   secondary_accent = "89b4fa";
