@@ -19,7 +19,6 @@
 in {
   wayland.windowManager.hyprland = {
     enable = true;
-    package = hyprland;
     xwayland = {
       enable = true;
     };
