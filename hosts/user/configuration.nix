@@ -83,7 +83,6 @@
       theme = "catppuccin-mocha";
       wayland.enable = true;
     };
-		windowManager.hyprland.enable = true;
    # displayManager.gdm = {
    #   enable = true;
    #   wayland = true;
