@@ -36,6 +36,8 @@ else
 fi
 if echo "$gpu" | grep -i "NVIDIA" > /dev/null; then
       gpu="nvidia"
+elif $virtualbox; then
+      gpu="virtualbox"
 else
       gpu="modesetting"
 fi
