@@ -40,6 +40,7 @@
 
   # Overlays
   nixpkgs = {
+		config.allowUnfree = true;
     overlays = [
       (self: super: {
         discord = super.discord.overrideAttrs (
