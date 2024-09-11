@@ -122,7 +122,7 @@ in {
         mfact = 0.5;
         orientation = "right";
         special_scale_factor = 0.8;
-        new_is_master = true;
+        new_status = master;
         no_gaps_when_only = false;
       };
 
