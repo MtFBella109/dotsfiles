@@ -13,13 +13,6 @@
 
 
 
-  #nixpkgs.config.packageOverrides = pkgs: {
-  #  nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
-  #    inherit pkgs;
-  #  };
-  #};
-
-
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -38,16 +31,12 @@
     };
   };
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
   # Enable networking
   networking.networkmanager.enable = true;
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
-    QT_QPA_PLATFORMTHEME="qt5ct";
+    QT_QPA_PLATFORMTHEME="qt6ct";
   };
   environment.etc = {
 	"wireplumber/bluetooth.lua.d/51-bluez-config.lua".text = ''
@@ -144,11 +133,11 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   
-  #  xdg.portal = {
-  #  enable = true;
-  #  wlr.enable = true;
-  #  extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  #};
+    xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  };
 
 
   environment.systemPackages = with pkgs; [
@@ -156,16 +145,15 @@
     adwaita-qt
     alacritty
     cliphist
-    catppuccin-unstable
+    catppuccin
     deluge-gtk
     dunst
     git
     grim
-    libsForQt5.kdeconnect-kde
-    libsForQt5.qt5ct
-    libsForQt5.qt5.qtwayland
+    kdePackages.kdeconnect-kde
+    kdePackages.qt6ct
+    kdePackages.qtwayland
     mc
-    qt6.qtwayland
     rofi-power-menu
     rofi-wayland
     slurp
@@ -189,15 +177,6 @@
       options = "--delete-older-than 7d";
     };
  
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
