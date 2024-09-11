@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+## Install packages temporarily ti gather some Informations
+virtualization=$(nix-shell -p virt-what --run 'virt-what')
+gpu=$(nix-shell --packages pciutils --run 'lspci | grep -E "VGA|3D"')
 ## Get the bunch of stuff out ouf the /etc/nixos/configuration.nix
 nixos_file="/etc/nixos/configuration.nix"
 timezone=$(grep 'time.timeZone =' "$nixos_file" | awk -F'"' '{print $2}')
@@ -24,8 +27,21 @@ if [[ $timezone = America* ]]; then
 else
       sed -i "s/FORMAT/$format/g" ./home/user/services/wayland/waybar/config.nix
 fi
+if [ -z $virtualization ]; then
+      virtualbox=false
+elif [[ $virtualization == *"virtualbox"* ]]; then
+      virtualbox=true
+else
+      virtualbox=false
+fi
+if echo "$gpu" | grep -i "NVIDIA" > /dev/null; then
+      gpu="nvidia"
+else
+      gpu="modesetting"
+fi
 sed -i "s/LAYOUT/$layout/g" ./hosts/user/configuration.nix
 sed -i "s/LOCALE/$locale/g" ./hosts/user/configuration.nix
+sed -i "s/DRIVER/$gpu/g" ./hosts/user/configuration.nix
 sed -i "s/LAYOUT/$layout/g" ./home/user/graphical/wms/hyprland/default.nix
 
 ## Make backups if the directory exists
