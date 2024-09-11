@@ -10,8 +10,8 @@ with lib; let
 in {
   mainBar = {
     layer = "top"; 
-    height = 28;  # Angepasst für die niedrigere Auflösung
-    spacing = 6;  # Angepasste Abstände
+    height = 28;  
+    spacing = 6;  
     margin-top = 5;
     margin-bottom = 2;
     margin-right = 6;
@@ -59,7 +59,7 @@ in {
       format = "{}";
     };
     "tray" = {
-      icon-size = 18;  # Etwas kleinere Symbole für die geringere Auflösung
+      icon-size = 18;  
       spacing = 4;
     };
     "clock" = {
