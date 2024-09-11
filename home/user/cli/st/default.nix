@@ -4,8 +4,8 @@
       buildInputs = oldAttrs.buildInputs ++ [harfbuzz];
       patches = [
         (fetchpatch {
-          url = "https://st.suckless.org/patches/ligatures/0.9/st-ligatures-20230105-0.9.diff";
-          sha256 = "sha256-F2LvUT2bPFfkw82vFS16wwGoB+TEIquTG2UnKAZfzh0=";
+          url = "https://st.suckless.org/patches/ligatures/0.9.2/st-ligatures-20240427-0.9.2.diff0.9.diff";
+          sha256 = "sha256-65f193171bc1ec932b45c45cf36812e4d884396e5e3a40d82d1520e61b94687d";
         })
         (fetchpatch {
           url = "https://st.suckless.org/patches/newterm/st-newterm-0.9.diff";
