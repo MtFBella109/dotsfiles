@@ -149,7 +149,7 @@
     adwaita-qt
     alacritty
     cliphist
-    catppuccin
+    catppuccin-sddm
     deluge-gtk
     dunst
     git
