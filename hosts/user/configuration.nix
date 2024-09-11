@@ -77,7 +77,7 @@
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
-    videoDrivers = ["nvidia"];
+    videoDrivers = ["DRIVER"];
      displayManager.sddm = {
       enable = true;
       theme = "catppuccin-mocha";
