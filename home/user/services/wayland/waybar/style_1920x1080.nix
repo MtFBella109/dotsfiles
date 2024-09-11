@@ -8,8 +8,8 @@ with colorscheme.colors; let
 in ''
     * {
       font-family: JetBrainsMono Nerd Font;
-      font-size: 11px;  # Angepasst von 13px auf 11px für die kleinere Auflösung
-      border-radius: 14px;  # Angepasst von 17px auf 14px
+      font-size: 11px;  
+      border-radius: 14px;  
     }
 
     #clock,
@@ -23,12 +23,12 @@ in ''
     #pulseaudio,
     #window,
     #tray {
-      padding: 4 12px;  # Angepasst von 5 15px auf 4 12px
-      border-radius: 10px;  # Angepasst von 12px auf 10px
+      padding: 4 12px;  
+      border-radius: 10px;  
       background: rgba(22, 22, 22, 0.6);
       color: rgb(180, 190, 254);
       box-shadow: rgba(17, 17, 27, 0.2) 0 0 3 2px;
-      margin-top: 6px;  # Reduziert von 8px auf 6px
+      margin-top: 6px;  
       margin-bottom: 6px;
       margin-right: 2px;
       margin-left: 2px;
@@ -61,14 +61,14 @@ in ''
 
     #workspaces button:hover {
       box-shadow: rgb(180, 190, 254) 0 0 0 1.5px;
-      min-width: 45px;  # Reduziert von 50px auf 45px
+      min-width: 45px;  
     }
 
     #workspaces {
       background-color: transparent;
       border-radius: 14px;
       padding: 4 0px;
-      margin-top: 2px;  # Angepasst für geringere Auflösung
+      margin-top: 2px;  
       margin-bottom: 2px;
     }
 
@@ -76,7 +76,7 @@ in ''
       box-shadow: rgba(17, 17, 27, 0.2) 0 0 3 2px;
       background-color: rgba(16, 16, 16, 0.6);
       border-radius: 10px;
-      margin-left: 8px;  # Reduziert von 10px auf 8px
+      margin-left: 8px;  
       transition: all 0.3s ease;
     }
 
@@ -113,8 +113,8 @@ in ''
     }
 
     #custom-power-menu {
-      margin-right: 8px;  # Reduziert von 10px auf 8px
-      padding-left: 10px;  # Angepasst
+      margin-right: 8px;  
+      padding-left: 10px;  
       padding-right: 12px;
       padding-top: 3px;
     }
@@ -163,13 +163,13 @@ in ''
 
     #pulseaudio.muted {
       color: rgb(243, 139, 168);
-      padding-right: 14px;  # Angepasst von 16px auf 14px
+      padding-right: 14px;  
     }
 
     #custom-notification.collapsed,
     #custom-notification.waiting_done {
       min-width: 12px;
-      padding-right: 14px;  # Angepasst von 17px auf 14px
+      padding-right: 14px;  
     }
 
     #custom-notification.waiting_start,
@@ -186,19 +186,19 @@ in ''
       );
       background-size: 400% 100%;
       animation: grey-gradient 3s linear infinite;
-      min-width: 450px;  # Angepasst von 500px auf 450px
-      border-radius: 14px;  # Angepasst von 17px auf 14px
+      min-width: 450px;  
+      border-radius: 14px;  
     }
 
     #custom-notification.collapsed_muted {
       min-width: 12px;
       color: rgb(243, 139, 168);
-      padding-right: 14px;  # Angepasst von 17px auf 14px
+      padding-right: 14px;  
     }
 
     #custom-notification.wallpaper {
       min-width: 12px;
-      padding-right: 14px;  # Angepasst von 17px auf 14px
+      padding-right: 14px;  
       color: transparent;
       background: linear-gradient(
         58deg,
