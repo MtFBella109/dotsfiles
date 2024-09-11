@@ -1,11 +1,5 @@
 # dotsfiles
-
-## The dotsfiles are currently not working
-## I din't have the possibility right now to fix them.
-## I hope that I can fix them this year, but I din't know when I can fix them
-
-
-
+* The dotfiles are working again, but they are a few bugs*
 
 ## Installation
 1. Copy this git repository with `git clone https://github.com/MtFBella109/dotsfiles`
