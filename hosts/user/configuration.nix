@@ -82,6 +82,10 @@
       enable = true;
       theme = "catppuccin-mocha";
       wayland.enable = true;
+			extraConfig = ''
+    [Session hyprland]
+    Exec=/usr/bin/sddm-helper startX --session=hyprland
+  '';
     };
    # displayManager.gdm = {
    #   enable = true;
