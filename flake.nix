@@ -1,8 +1,8 @@
 {
-  description = "Redyf's NixOS config for desktop and laptop";
+  description = "Bella's NixOS config for desktop and laptop";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     utils.url = "github:gytis-ivaskevicius/flake-utils-plus";
     #hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     waybar-hyprland.url = "github:hyprwm/hyprland";
