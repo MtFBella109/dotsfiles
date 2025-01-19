@@ -82,19 +82,17 @@
       enable = true;
       theme = "catppuccin-mocha";
       wayland.enable = true;
-			extraConfig = ''
-    [Session hyprland]
-    Exec=/usr/bin/sddm-helper startX --session=hyprland
-  '';
+			#extraConfig = ''
+  #  [Session hyprland]
+  #  Exec=/usr/bin/sddm-helper startX --session=hyprland
+  #'';
     };
-   # displayManager.gdm = {
-   #   enable = true;
-   #   wayland = true;
-   # };
     # Configre keymap in X11
     layout = "LAYOUT";
     xkbVariant = "";
   };
+
+	programs.hyprland.enable = true;
 
   
   # Configure console keymap
